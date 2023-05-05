@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import {SearchIcon , BellIcon} from "@heroicons/react/solid"
 import Link from 'next/link'
 
-const Header = () => {
+const Header = ({genres}) => {
 
     const [isScrolled, setIsScrolled] = useState(false)
 
@@ -12,10 +12,8 @@ const Header = () => {
         const handleScroll=()=>{
             if(window.scrollY > 0 ){
                 setIsScrolled(true)
-                console.log("scrooll 0 değil")
             }else{
                 setIsScrolled(false)
-                console.log("scrooll 0 ")
             }
         }
 
@@ -37,17 +35,16 @@ const Header = () => {
             className="cursor-pointer object-contain"
           />
         </Link>
-        <ul className="hidden space-x-4 md:flex">
-          <Link href="/">
-            <li className="headerLink cursor-pointer font-semibold text-white hover:text-white">
-              Home
-            </li>
-          </Link>
-          <li className="headerLink">TV Shows</li>
+        {/* <ul className="hidden space-x-4 md:flex">
+          <li className="headerLink cursor-pointer font-semibold text-white hover:text-white">
+            <Link href="/"> Home</Link>
+          </li> */}
+          {/* <li className="headerLink">TV Shows</li>
           <li className="headerLink">Movies</li>
           <li className="headerLink">New & Popular</li>
-          <li className="headerLink">My List</li>
-        </ul>
+          <li className="headerLink">My List</li> */}
+          
+        {/* </ul> */}
       </div>
       
       <div className="flex items-center space-x-4 text-sm font-light text-white">

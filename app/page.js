@@ -12,6 +12,7 @@ async function HomePage() {
     horrorMovies,
     romanceMovies,
     documentaries,
+    genres,
   ] = await Promise.all([
     fetch(requests.fetchNetflixOriginals).then((res) => res.json()).then(res => res.results),
     fetch(requests.fetchTrending).then((res) => res.json()).then(res => res.results ),
@@ -21,6 +22,7 @@ async function HomePage() {
     fetch(requests.fetchHorrorMovies).then((res) => res.json()).then(res => res.results ),
     fetch(requests.fetchRomanceMovies).then((res) => res.json()).then(res => res.results ),
     fetch(requests.fetchDocumentaries).then((res) => res.json()).then(res => res.results ),
+    fetch(requests.fetchGenres).then((res) => res.json()).then(res => res.genres )
   ])
   
   return (
@@ -34,6 +36,7 @@ async function HomePage() {
           horrorMovies={horrorMovies}
           romanceMovies={romanceMovies}
           documentaries={documentaries}
+          genres={genres}
         />
     </>
   )

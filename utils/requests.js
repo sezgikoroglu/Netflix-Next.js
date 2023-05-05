@@ -11,7 +11,7 @@ const requests={
   fetchHorrorMovies: `${BASE_URL}/discover/movie?api_key=${API_KEY}&language=en-US&with_genres=27`,
   fetchRomanceMovies: `${BASE_URL}/discover/movie?api_key=${API_KEY}&language=en-US&with_genres=10749`,
   fetchDocumentaries: `${BASE_URL}/discover/movie?api_key=${API_KEY}&language=en-US&with_genres=99`,
-  
+  fetchGenres:`${BASE_URL}/genre/movie/list?api_key=${API_KEY}&language=en-US`,
 }
 
 async function fetchData(path, { query = "" } = {}) {
@@ -24,6 +24,13 @@ async function fetchData(path, { query = "" } = {}) {
 export async function fetchSingleMovie(movieId) {
     const res = await fetchData(`/movie/${movieId}`);
     return res;
+}
+
+export async function fetchMoviesByGenre(genreId) {
+  const res = await fetchData(`/discover/movie`,{
+    query: `with_genres=${genreId}`,
+  });
+  return res.results;
 }
 
 

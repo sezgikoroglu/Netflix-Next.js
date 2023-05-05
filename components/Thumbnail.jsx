@@ -10,13 +10,13 @@ const Thumbnail = ({movie}) => {
       <Link href={`/movie/${movie.id}`}>
         <Image
           src={`https://image.tmdb.org/t/p/w500${
-               movie.poster_path
+               movie.poster_path || movie?.poster_path
           }`}
           fill
           className='rounded-sm object-cover md:rounded'
         />
       </Link>
-      <h3>thımbnaikl</h3>
+      {/* <h3>thımbnaikl</h3> */}
     </div>
   )
 }
