@@ -9,7 +9,7 @@ const HomeContainer = ({
   topRated,
   genres
 }) => {
-    console.log(genres)
+   
   return (
     <>  
         <Banner netflixOriginals={netflixOriginals} genres={genres} />

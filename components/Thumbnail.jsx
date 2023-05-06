@@ -17,7 +17,6 @@ const Thumbnail = ({movie}) => {
           alt=''
         />
       </Link>
-      {/* <h3>thımbnaikl</h3> */}
     </div>
   )
 }

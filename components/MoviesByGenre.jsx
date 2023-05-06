@@ -1,12 +1,22 @@
+"use client"
+
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { baseUrl } from '@/constants/movie'
+import { useGlobalContext } from '@/context/state';
 
-const MoviesByGenre = ({title,movies}) => {
+const MoviesByGenre = ({paramsId,movies}) => {
+    console.log(paramsId)
+    const { categories,setCategories } = useGlobalContext();
+
   return (
     <div className=' space-x-10  lg:h-[65vh] mt-20 p-12 items-center'>
-        <h2 class="capitalize w-56 md:text-2xl cursor-pointer text-sm font-semibold text-[#e5e5e5] transition duration-200 hover:text-white">Category name</h2>
+        <h2 className="capitalize w-56 md:text-2xl cursor-pointer text-sm font-semibold text-[#e5e5e5] transition duration-200 hover:text-white">
+            {
+               categories.find(ctg=>ctg.id == paramsId )?.name
+            }
+        </h2>
         
         <div className='grid grid-cols-3 gap-6 mt-7'>
             {

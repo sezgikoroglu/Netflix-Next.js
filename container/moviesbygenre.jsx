@@ -1,9 +1,9 @@
 import React from 'react'
 import MoviesByGenre from '@/components/MoviesByGenre'
 
-const MoviesByGenreContainer = ({title,movies}) => {
+const MoviesByGenreContainer = ({paramsId,title,movies}) => {
   return (
-    <MoviesByGenre title={title} movies={movies} />
+    <MoviesByGenre title={title} movies={movies} paramsId={paramsId} />
   )
 }
 
