@@ -11,8 +11,9 @@ const Movie = ({movieDetail}) => {
     <div className='flex space-x-10  lg:h-[65vh] mt-20 p-12 items-center'>
         <div className='w-3/6 h-full relative'>
         <Image  className='relative object-cover rounded-sm  md:rounded '
-            src={`${baseUrl}${movieDetail?.backdrop_path || movieDetail?.poster_path}`}
+            src={`https://image.tmdb.org/t/p/w500/${movieDetail?.backdrop_path || movieDetail?.poster_path}`}
             fill
+            alt=''
          />
         </div>
             

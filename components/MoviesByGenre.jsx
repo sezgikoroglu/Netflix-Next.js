@@ -11,12 +11,14 @@ const MoviesByGenre = ({title,movies}) => {
         <div className='grid grid-cols-3 gap-6 mt-7'>
             {
             movies.map(movie=>(
-                <div className='w-full h-full flex flex-col gap-2 items-center'>
-                    <Link href={`/movie/${movie.id}`} className='w-full h-full flex flex-col gap-2 items-center'>
+                <div key={movie.id} className='w-full h-full flex flex-col gap-2 items-center'>
+                    <Link href={`/movie/${movie.id}`} className='relative w-full h-full flex flex-col gap-2 items-center' >
                         <Image  className='relative object-cover rounded-sm  md:rounded md:hover:scale-110 transition duration-200 ease-out'
-                            src={`${baseUrl}${movie?.backdrop_path || movie?.poster_path}`}
+                            src={`https://image.tmdb.org/t/p/w500${movie?.poster_path || movie?.backdrop_path}`}
                             height={600}
                             width={300}
+                            unoptimized
+                            alt="img"
                         />
                         <p>{movie.title}</p>
                     </Link>

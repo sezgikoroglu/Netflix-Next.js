@@ -14,6 +14,7 @@ const Thumbnail = ({movie}) => {
           }`}
           fill
           className='rounded-sm object-cover md:rounded'
+          alt=''
         />
       </Link>
       {/* <h3>thımbnaikl</h3> */}

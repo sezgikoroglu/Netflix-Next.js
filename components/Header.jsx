@@ -39,11 +39,9 @@ const Header = ({genres}) => {
           <li className="headerLink cursor-pointer font-semibold text-white hover:text-white">
             <Link href="/"> Movies</Link>
           </li> 
-          {/* <li className="headerLink">TV Shows</li>
-          <li className="headerLink">Movies</li>
+          <li className="headerLink">TV Shows</li>
           <li className="headerLink">New & Popular</li>
-          <li className="headerLink">My List</li>  */}
-          
+          <li className="headerLink">My List</li> 
         </ul>
       </div>
       

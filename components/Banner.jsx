@@ -5,7 +5,7 @@ import { baseUrl } from '@/constants/movie'
 import { FaPlay } from 'react-icons/fa'
 import { InformationCircleIcon } from '@heroicons/react/outline'
 import Sub from './Sub'
-import styles from "./style.module.css";
+import styles from "../styles/style.module.css";
 
 const Banner = ({netflixOriginals,genres}) => {
 
@@ -30,11 +30,6 @@ const Banner = ({netflixOriginals,genres}) => {
       <h1 className='text-2xl font-bold md:text-4xl lg:text-7xl'>
         {movie?.title || movie?.name || movie?.original_name }
       </h1>
-      {/* <p className='max-w-xs text-xs text-shadow-md md:max-w-lg md:text-lg lg:max-w-2xl lg:text-2xl'
-        style={{display:"-webkit-box" , overflow:"hidden", WebkitLineClamp:2 , boxOrient:"vertical"}}
-      >
-        {movie?.overview}
-      </p> */}
       <p className={styles.overview } >
          {movie?.overview}
       </p>
