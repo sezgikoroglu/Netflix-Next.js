@@ -1,6 +1,6 @@
 import React from 'react'
 import { fetchMoviesByGenre } from '@/utils/requests'
-import Row from '@/components/Row';
+import MoviesByGenreContainer from '@/container/moviesbygenre';
 
 async function MoviesByGenre({ params, searchParams }) {
     
@@ -8,7 +8,7 @@ async function MoviesByGenre({ params, searchParams }) {
     
     return(
         
-        <Row title={"cat}"} movies={movies} />
+        < MoviesByGenreContainer title={"Category"} movies={movies}  />
     )
 }
 

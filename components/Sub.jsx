@@ -8,6 +8,7 @@ import { Button } from '@mui/base';
 import Link from 'next/link';
 const ITEM_HEIGHT = 48;
 
+
 const Sub = ({genres}) => {
 
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -22,7 +23,7 @@ const Sub = ({genres}) => {
   return (
     
         <div className=" flex gap-14 items-center  ">
-            <div className=" text-3xl font-bold">Movies</div>
+            {/* <div className=" text-3xl font-bold">Movies</div> */}
             <div>
       <Button className='bg-black border-solid border-2 pl-3 py-1 pr-12 font-medium  text-white border-white'
         aria-label="more"
