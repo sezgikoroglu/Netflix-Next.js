@@ -29,7 +29,7 @@ const Banner = ({genres}) => {
           src={`${baseUrl}${movie?.backdrop_path || movie?.poster_path}`}
           alt='img'
           style={{objectFit:"cover"}}
-          priority={true}
+          priority
         />
       </div>
       <Sub genres={genres}/>

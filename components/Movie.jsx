@@ -13,6 +13,8 @@ const Movie = ({movieDetail}) => {
             src={`https://image.tmdb.org/t/p/w500/${movieDetail?.backdrop_path || movieDetail?.poster_path}`}
             fill
             alt='img'
+            sizes=''
+            
          />
         </div>
             

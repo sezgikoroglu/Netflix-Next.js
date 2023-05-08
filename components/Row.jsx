@@ -2,6 +2,7 @@
 import { useState, useRef } from 'react'
 //import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/outline'
 import Thumbnail from './Thumbnail'
+import Image from 'next/image'
 
 const Row = ({title,movies}) => {
 
@@ -31,6 +32,15 @@ const Row = ({title,movies}) => {
           }`}
         onClick={()=>handleClick("left")}
         /> */}
+        <Image className={`absolute top-0 bottom-0 left-2 z-40 m-auto h-9 w-9 cursor-pointer opacity-0 transition hover:scale-125 group-hover:opacity-100 ${
+            !isMoved && 'hidden'
+          }`}
+          onClick={()=>handleClick("left")}
+          src="/leftArrow.png"
+          width={36}
+          height={36}
+          alt='png'
+        />
         <div 
           ref={rowRef}
           className='flex items-center space-x-0.5 overflow-x-scroll scrollbar-hide md:space-x-2.5 md:p-2 '>
@@ -41,6 +51,14 @@ const Row = ({title,movies}) => {
         {/* <ChevronRightIcon className='absolute top-0 bottom-0 right-2 z-40 m-auto h-9 w-9 cursor-pointer opacity-0 transition hover:scale-125 group-hover:opacity-100'
         onClick={()=>handleClick("right")}
         /> */}
+        <Image
+          className='absolute top-0 bottom-0 right-2 z-40 m-auto h-9 w-9 cursor-pointer opacity-0 transition hover:scale-125 group-hover:opacity-100'
+          onClick={()=>handleClick("right")}
+          src="/rightArrrow.png"
+          width={36}
+          height={36}
+          alt='png'
+        />
       </div>
     </div>
   )

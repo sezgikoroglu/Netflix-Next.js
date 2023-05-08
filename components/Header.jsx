@@ -31,11 +31,11 @@ const Header = ({genres}) => {
         <Link href="/" className="cursor-pointer">
           <Image
             src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
+            priority
             width={100}
             height={100}
-            className="cursor-pointer object-contain"
             alt='img'
-            priority
+            style={{cursor:"pointer" , objectFit:"contain" }}
           />
         </Link>
         <ul className="hidden space-x-4 md:flex">
