@@ -2,20 +2,24 @@
 import  { useEffect , useState  } from 'react'
 import Image from 'next/image'
 import { baseUrl } from '@/constants/movie'
-import { FaPlay } from 'react-icons/fa'
-import { InformationCircleIcon } from '@heroicons/react/outline'
+//import { FaPlay } from 'react-icons/fa'
+//import { InformationCircleIcon } from '@heroicons/react/outline'
 import Sub from './Sub'
 import styles from "../styles/style.module.css";
+import useMovies from '../swr/useMovie'
 
-const Banner = ({netflixOriginals,genres}) => {
+const Banner = ({genres}) => {
 
+  const { movies, isLoading } = useMovies()
   const [movie,setMovie]=useState()
 
   useEffect(() => {
-    setMovie(
-      netflixOriginals[Math.floor(Math.random() * netflixOriginals.length)]
-    )
-  }, [netflixOriginals])
+    if (movies) {
+      setMovie(movies[Math.floor(Math.random() * movies.length)])
+    }
+  }, [movies])
+
+  if (isLoading || !movie) return <div>Loading...</div>
 
   return (
     <div className="flex flex-col  pt-16 md:space-y-4 lg:h-[65vh] lg:justify-between  ">
@@ -23,7 +27,9 @@ const Banner = ({netflixOriginals,genres}) => {
       <Image
           fill
           src={`${baseUrl}${movie?.backdrop_path || movie?.poster_path}`}
+          alt='img'
           style={{objectFit:"cover"}}
+          priority={true}
         />
       </div>
       <Sub genres={genres}/>
@@ -36,7 +42,7 @@ const Banner = ({netflixOriginals,genres}) => {
 
       <div className="flex space-x-3">
         <button className="bannerButton bg-white text-black ">
-          <FaPlay className="h-4 w-4 text-black md:h-7 md:w-7" />
+          {/* <FaPlay className="h-4 w-4 text-black md:h-7 md:w-7" /> */}
           Play
         </button>
 
@@ -47,7 +53,7 @@ const Banner = ({netflixOriginals,genres}) => {
             setShowModal(true)
           }}
         >
-          <InformationCircleIcon className="h-5 w-5 md:h-8 md:w-8" /> More Info
+           More Info 
         </button>
       </div>
     </div>

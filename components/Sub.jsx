@@ -5,8 +5,9 @@ import styles from "@/styles/style.module.css"
 import { useGlobalContext } from '@/context/state';
 
 const Sub = ({genres}) => {
-
+  console.log(genres)
   const { categories,setCategories } = useGlobalContext();
+  console.log(categories)
 
   useEffect(() => {
     setCategories(genres)
@@ -18,8 +19,8 @@ const Sub = ({genres}) => {
       <ul className={styles.demoDropdown }>
         <li><a href="#">Genre</a>
         <ul>
-            <li>{genres.map((genre)=>(
-            <Link href={`/movies/${genre.id}`}>{genre.name}</Link>
+            <li>{genres?.map((genre)=>(
+            <Link key={"keyGenre"+genre.id} href={`/movies/${genre.id}`}>{genre.name}</Link>
           ))}</li>
         </ul>
         </li>

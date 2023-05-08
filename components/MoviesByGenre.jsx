@@ -7,7 +7,7 @@ import { baseUrl } from '@/constants/movie'
 import { useGlobalContext } from '@/context/state';
 
 const MoviesByGenre = ({paramsId,movies}) => {
-    console.log(paramsId)
+    
     const { categories,setCategories } = useGlobalContext();
 
   return (
@@ -21,18 +21,17 @@ const MoviesByGenre = ({paramsId,movies}) => {
         <div className='grid grid-cols-3 gap-6 mt-7'>
             {
             movies.map(movie=>(
-                <div key={movie.id} className='w-full h-full flex flex-col gap-2 items-center'>
-                    <Link href={`/movie/${movie.id}`} className='relative w-full h-full flex flex-col gap-2 items-center' >
-                        <Image  className='relative object-cover rounded-sm  md:rounded md:hover:scale-110 transition duration-200 ease-out'
-                            src={`https://image.tmdb.org/t/p/w500${movie?.poster_path || movie?.backdrop_path}`}
-                            height={600}
-                            width={300}
-                            unoptimized
-                            alt="img"
-                        />
-                        <p>{movie.title}</p>
-                    </Link>
-                </div>
+              <div key={"movies"+movie.id} className='w-full h-full flex flex-col gap-2 items-center'>
+                <Link href={`/movie/${movie.id}`} className='relative w-full h-full flex flex-col gap-2 items-center' >
+                    <Image  className='relative object-cover rounded-sm  md:rounded md:hover:scale-110 transition duration-200 ease-out'
+                        src={`https://image.tmdb.org/t/p/w500${movie?.poster_path || movie?.backdrop_path}`}
+                        height={600}
+                        width={300}
+                        alt="img"
+                    />
+                    <p>{movie.title}</p>
+                </Link>
+              </div>
             ))
             }
         </div>

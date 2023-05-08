@@ -1,7 +1,6 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
 import Header from '@/components/Header'
-import requests from '@/utils/requests'
 import { GlobalContextProvider } from '../context/state';
 
 const inter = Inter({ subsets: ['latin'] })

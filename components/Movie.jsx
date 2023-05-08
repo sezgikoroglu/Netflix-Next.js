@@ -1,19 +1,18 @@
 import React from 'react'
 import Image from 'next/image'
 import { baseUrl } from '@/constants/movie'
-import { FaPlay } from 'react-icons/fa'
-import { InformationCircleIcon } from '@heroicons/react/outline'
+
 
 const Movie = ({movieDetail}) => {
 
   return (
 
     <div className='flex space-x-10  lg:h-[65vh] mt-20 p-12 items-center'>
-        <div className='w-3/6 h-full relative'>
-        <Image  className='relative object-cover rounded-sm  md:rounded '
+        <div className='w-3/6 h-full relative object-cover rounded-sm  md:rounded'>
+        <Image   
             src={`https://image.tmdb.org/t/p/w500/${movieDetail?.backdrop_path || movieDetail?.poster_path}`}
             fill
-            alt=''
+            alt='img'
          />
         </div>
             

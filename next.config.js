@@ -4,8 +4,13 @@ const nextConfig = {
     appDir: true,
   },
   images: {
-    domains: ['rb.gy', 'image.tmdb.org'],
-  },
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "image.tmdb.org",
+      },
+    ],
+  }
 }
 
 module.exports = nextConfig

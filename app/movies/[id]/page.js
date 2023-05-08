@@ -8,7 +8,7 @@ async function MoviesByGenre({ params, searchParams }) {
     
     return(
         
-        < MoviesByGenreContainer title={"Category"} movies={movies} paramsId={params.id}  />
+        < MoviesByGenreContainer  movies={movies} paramsId={params.id}  />
     )
 }
 
